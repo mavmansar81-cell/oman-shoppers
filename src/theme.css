@@ -1,0 +1,119 @@
+/* The token contract, and the whole of this site's art direction: :root holds
+   the values, @theme inline turns them into utilities. One colour scheme,
+   deliberately — warm paper, deep ink blue, Gulf teal, one saffron accent. */
+:root {
+  /* Paper ground and ink */
+  --background: oklch(0.972 0.011 84);        /* warm paper */
+  --foreground: oklch(0.245 0.045 254);       /* deep ink blue */
+  --card: oklch(0.995 0.005 90);
+  --card-foreground: oklch(0.245 0.045 254);
+  --popover: oklch(0.995 0.005 90);
+  --popover-foreground: oklch(0.245 0.045 254);
+
+  /* The top bar and dark bands: the ink, as a ground */
+  --primary: oklch(0.245 0.045 254);
+  --primary-foreground: oklch(0.975 0.012 84);
+
+  --secondary: oklch(0.938 0.018 82);
+  --secondary-foreground: oklch(0.245 0.045 254);
+  --muted: oklch(0.945 0.014 82);
+  --muted-foreground: oklch(0.45 0.035 254);
+  --accent: oklch(0.938 0.018 82);
+  --accent-foreground: oklch(0.245 0.045 254);
+
+  /* Gulf teal: the product page band, the lowest price, the mark */
+  --teal: oklch(0.45 0.078 191);
+  --teal-band: oklch(0.34 0.065 192);
+  --teal-foreground: oklch(0.985 0.008 90);
+  --teal-soft: oklch(0.945 0.028 190);
+  --teal-deep: oklch(0.34 0.062 195);
+  /* Teal as a text colour on paper, and as the figure on the band. */
+  --teal-text: oklch(0.455 0.078 191);
+  --teal-on-band: oklch(0.905 0.028 190);
+
+  /* Saffron: the one accent, on the cheapest retailer of a product table.
+     --saffron-text is the same hue darkened for saffron-on-paper text, so the
+     figure still clears 4.5:1; it is used for the lowest price in the band. */
+  --saffron: oklch(0.775 0.155 78);
+  --saffron-soft: oklch(0.955 0.045 84);
+  --saffron-ink: oklch(0.36 0.075 62);
+  --saffron-text: oklch(0.355 0.07 62);
+
+  --destructive: oklch(0.52 0.17 25);
+  --border: oklch(0.895 0.014 82);
+  --input: oklch(0.885 0.016 82);
+  --ring: oklch(0.505 0.082 190);
+
+  --font-heading: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius: 0.75rem;
+  /* A pill radius is for controls. Panels take the same corner up to a bound,
+     so a reference that says 999px does not make every card a lozenge. */
+  --radius-panel: min(var(--radius), 1.25rem);
+  --shadow: 0 1px 2px oklch(0.245 0.045 254 / 0.06), 0 12px 32px oklch(0.245 0.045 254 / 0.08);
+
+  --hero-size: clamp(2.5rem, 5.2vw, 4.25rem);
+  --heading-tracking: -0.025em;
+  --heading-line: 1.05;
+  --heading-weight: 700;
+  --body-size: 1rem;
+  --body-line: 1.6;
+
+  --content-width: 1180px;
+  --gutter: clamp(1.125rem, 4vw, 2.5rem);
+  --section-space: clamp(3rem, 6vw, 5rem);
+  --layout-gap: 1.5rem;
+  --motion-fast: 180ms;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-teal: var(--teal);
+  --color-teal-band: var(--teal-band);
+  --color-teal-foreground: var(--teal-foreground);
+  --color-teal-soft: var(--teal-soft);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-text: var(--teal-text);
+  --color-teal-on-band: var(--teal-on-band);
+  --color-saffron: var(--saffron);
+  --color-saffron-soft: var(--saffron-soft);
+  --color-saffron-ink: var(--saffron-ink);
+  --color-saffron-text: var(--saffron-text);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+  --font-label: var(--font-label);
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* shadcn's own mapping: rounded-md is the control, rounded-xl the panel. */
+  --radius-sm: max(0px, calc(var(--radius-panel) - 4px));
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-panel);
+  --radius-xl: calc(var(--radius-panel) + 4px);
+
+  --shadow-raised: var(--shadow);
+  --spacing-gutter: var(--gutter);
+  --spacing-section: var(--section-space);
+  --spacing-layout: var(--layout-gap);
+  --container-content: var(--content-width);
+}

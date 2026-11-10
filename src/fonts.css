@@ -1,0 +1,7 @@
+/* The site's faces. Imported before Tailwind because CSS requires a remote
+   @import at the top of the bundled sheet. Changing a face means changing this
+   import and the --font-* values in theme.css together.
+
+   Bricolage Grotesque carries headings; IBM Plex Sans is body, labels and the
+   tabular figures in the price columns. Two families, no third. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
